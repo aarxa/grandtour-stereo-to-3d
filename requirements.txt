@@ -1,0 +1,7 @@
+numpy>=1.26
+opencv-python>=4.8
+PyYAML>=6.0
+numcodecs>=0.12
+imageio-ffmpeg>=0.4.9
+Pillow>=10.0
+matplotlib>=3.8

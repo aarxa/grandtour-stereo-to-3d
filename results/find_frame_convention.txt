@@ -1,0 +1,8 @@
+67 of 96 hypotheses put at least 3000 LiDAR returns inside the image. Best first:
+
+within 15%:  86%  median rel err   5.8%  n= 40859  yaml maps box_base into the sensor     camera=right axes=identity
+within 15%:  83%  median rel err   7.0%  n= 41344  yaml maps box_base into the sensor     camera=left  axes=identity
+within 15%:  28%  median rel err  47.5%  n= 34509  yaml is the sensor pose in box_base    camera=right axes=[[-1, 0, 0], [0, 0, 1], [0, 1, 0]]
+within 15%:  27%  median rel err  46.0%  n= 32799  yaml is the sensor pose in box_base    camera=left  axes=[[-1, 0, 0], [0, 0, 1], [0, 1, 0]]
+within 15%:  21%  median rel err  41.9%  n= 29086  yaml is the sensor pose in box_base    camera=left  axes=[[1, 0, 0], [0, 0, -1], [0, 1, 0]]
+within 15%:  21%  median rel err  52.6%  n= 44199  yaml maps box_base into the sensor     camera=left  axes=[[-1, 0, 0], [0, -1, 0], [0, 0, 1]]

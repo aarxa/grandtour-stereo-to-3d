@@ -1,0 +1,30 @@
+48 of 124 sampled frames have a LiDAR scan within 20 ms (only those are used)
+
+1. Which calibration? Left-referenced stereo, all visible LiDAR returns at 0.5-10 m
+   parallel cameras, lens undistortion only                 n=273866 | median |err|  26.3 cm | median |rel|  7.3% | within 10%:  67% | bias  +6.8%
+   parallel cameras, principal point rotated 180 deg        n=279799 | median |err|  19.3 cm | median |rel|  5.6% | within 10%:  71% | bias  +2.5%
+   stereo rectification + principal point rotated 180 deg   n=280338 | median |err|  22.6 cm | median |rel|  6.1% | within 10%:  74% | bias  -2.9%
+   stereo rectification from the dataset extrinsics         n=276210 | median |err|  10.5 cm | median |rel|  2.8% | within 10%:  90% | bias  -0.1%
+
+2. Final calibration, by distance
+   left-referenced (64% of visible LiDAR returns, incl. beyond 10 m, have a stereo value): n=276210 | median |err|  10.5 cm | median |rel|  2.8% | within 10%:  90% | bias  -0.1%
+    LiDAR 0.5-2   m: n= 18756 | median |err|   2.3 cm | median |rel|  1.2% | within 10%:  98% | bias  -0.3%
+    LiDAR   2-4   m: n=131667 | median |err|   7.0 cm | median |rel|  2.4% | within 10%:  94% | bias  +0.3%
+    LiDAR   4-6   m: n= 75859 | median |err|  15.8 cm | median |rel|  3.3% | within 10%:  89% | bias  -0.2%
+    LiDAR   6-10  m: n= 49928 | median |err|  39.7 cm | median |rel|  5.0% | within 10%:  81% | bias  -1.4%
+   right-referenced (62% of visible LiDAR returns, incl. beyond 10 m, have a stereo value): n=267270 | median |err|  10.4 cm | median |rel|  2.7% | within 10%:  90% | bias  +0.1%
+    LiDAR 0.5-2   m: n= 19634 | median |err|   2.3 cm | median |rel|  1.3% | within 10%:  93% | bias  -0.0%
+    LiDAR   2-4   m: n=119541 | median |err|   6.1 cm | median |rel|  2.1% | within 10%:  94% | bias  +0.5%
+    LiDAR   4-6   m: n= 67872 | median |err|  15.0 cm | median |rel|  3.1% | within 10%:  89% | bias  +0.4%
+    LiDAR   6-10  m: n= 60223 | median |err|  41.1 cm | median |rel|  5.1% | within 10%:  83% | bias  -2.3%
+
+3. ZED SDK depth map vs LiDAR (its own coverage, frames 0-148): n= 59155 | median |err|  11.1 cm | median |rel|  5.2% | within 10%:  87% | bias  -4.9%
+    LiDAR 0.5-2   m: n= 23991 | median |err|   6.5 cm | median |rel|  3.9% | within 10%:  95% | bias  -3.7%
+    LiDAR   2-4   m: n= 29039 | median |err|  14.2 cm | median |rel|  6.1% | within 10%:  82% | bias  -5.9%
+    LiDAR   4-6   m: n=  5973 | median |err|  28.8 cm | median |rel|  6.1% | within 10%:  79% | bias  -5.8%
+    LiDAR   6-10  m: n=   152 | median |err| 317.8 cm | median |rel| 40.6% | within 10%:   6% | bias -40.6%
+
+4. Like for like: the 47112 visible LiDAR returns (frames 0-148) where both methods have a value
+   coverage of the 66847 visible returns at 0.5-10 m: stereo 82%, ZED SDK 86%, both 70%
+   stereo  n= 47112 | median |err|   3.6 cm | median |rel|  1.6% | within 10%:  90% | bias  -0.3%
+   ZED SDK n= 47112 | median |err|  11.1 cm | median |rel|  5.0% | within 10%:  88% | bias  -4.7%
